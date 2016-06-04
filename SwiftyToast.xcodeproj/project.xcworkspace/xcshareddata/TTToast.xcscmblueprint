@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C175CB5F9E8A76D6A47CAB1218BEB75087FA32AE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C175CB5F9E8A76D6A47CAB1218BEB75087FA32AE" : 0,
+    "8D6AF3F0851A5FE85CDC21A835EF23FD2B119DF1" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C796AA05-961F-4091-8E6B-501517B3AD54",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C175CB5F9E8A76D6A47CAB1218BEB75087FA32AE" : "SwiftyToast\/",
+    "8D6AF3F0851A5FE85CDC21A835EF23FD2B119DF1" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TTToast",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TTToast.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:tanakasan2525\/mywork-of-mac.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8D6AF3F0851A5FE85CDC21A835EF23FD2B119DF1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/tattn\/TTToast.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C175CB5F9E8A76D6A47CAB1218BEB75087FA32AE"
+    }
+  ]
+}
