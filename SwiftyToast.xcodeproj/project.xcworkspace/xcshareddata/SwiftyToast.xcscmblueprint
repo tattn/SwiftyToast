@@ -1,15 +1,15 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C175CB5F9E8A76D6A47CAB1218BEB75087FA32AE",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "BB444BEE73EE7E7266C5A5D67920FA8D1CFC3F64",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "C175CB5F9E8A76D6A47CAB1218BEB75087FA32AE" : 0,
+    "BB444BEE73EE7E7266C5A5D67920FA8D1CFC3F64" : 9223372036854775807,
     "8D6AF3F0851A5FE85CDC21A835EF23FD2B119DF1" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "9B41B60C-982B-464C-977E-512616BF0C38",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "C175CB5F9E8A76D6A47CAB1218BEB75087FA32AE" : "SwiftyToast\/",
+    "BB444BEE73EE7E7266C5A5D67920FA8D1CFC3F64" : "SwiftyToast\/",
     "8D6AF3F0851A5FE85CDC21A835EF23FD2B119DF1" : ".."
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "SwiftyToast",
@@ -24,7 +24,7 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/tattn\/TTToast.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C175CB5F9E8A76D6A47CAB1218BEB75087FA32AE"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BB444BEE73EE7E7266C5A5D67920FA8D1CFC3F64"
     }
   ]
 }

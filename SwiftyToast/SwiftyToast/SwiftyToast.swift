@@ -22,44 +22,43 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE
 
-import Foundation
 import UIKit
 
-public class SwiftyToast: UIView {
+open class SwiftyToast: UIView {
 
-    public enum Position: UInt32 {
-        case Middle = 1
-        case Top = 2
-        case Bottom = 4
-        case Left = 8
-        case Right = 16
+    public enum Position: Int {
+        case middle = 1
+        case top = 2
+        case bottom = 4
+        case left = 8
+        case right = 16
     }
 
-    public class SwiftyToastConfig: NSObject {
+    open class SwiftyToastConfig: NSObject {
         // Appearance
-        public var maxWidth = CGFloat(0.8)
-        public var paddingHorizontal = CGFloat(10.0)
-        public var paddingVertical = CGFloat(10.0)
-        public var cornerRadius = CGFloat(8)
-        public var alpha = CGFloat(0.9)
-        public var font = UIFont(name: "HiraKakuProN-W6", size: 15.0)
-        public var textColor = UIColor.whiteColor()
-        public var backgroundColor = UIColor(red: 1.0, green: 0.4, blue: 0.4, alpha: 1.0)
+        open var maxWidth = CGFloat(0.8)
+        open var paddingHorizontal = CGFloat(10.0)
+        open var paddingVertical = CGFloat(10.0)
+        open var cornerRadius = CGFloat(8)
+        open var alpha = CGFloat(0.9)
+        open var font = UIFont(name: "HiraKakuProN-W6", size: 15.0)
+        open var textColor = UIColor.white
+        open var backgroundColor = UIColor(red: 1.0, green: 0.4, blue: 0.4, alpha: 1.0)
 
         // Shadow
-        public var shadow = false
-        public var shadowOpacity = Float(0.8)
-        public var shadowRadius = CGFloat(5.0)
-        public var shadowOffset = CGSize(width: 4.0, height: 4.0)
-        public var shadowColor = UIColor.grayColor().CGColor
+        open var shadow = false
+        open var shadowOpacity = Float(0.8)
+        open var shadowRadius = CGFloat(5.0)
+        open var shadowOffset = CGSize(width: 4.0, height: 4.0)
+        open var shadowColor = UIColor.gray.cgColor
 
         // Duration
-        public var durationBefore = 1.0
-        public var duration = 1.3
-        public var durationAfter = 1.0
+        open var durationBefore = 1.0
+        open var duration = 1.3
+        open var durationAfter = 1.0
 
         // Position
-        public var position = Position.Middle.rawValue
+        open var position = Position.middle.rawValue
 
 
         func duplicate() -> SwiftyToastConfig {
@@ -89,9 +88,9 @@ public class SwiftyToast: UIView {
     }
 
     static var config = SwiftyToastConfig()
-    private var _config = config.duplicate()
+    fileprivate var _config = config.duplicate()
 
-    private func setup(message: String, parent: UIView) {
+    fileprivate func setup(_ message: String, parent: UIView) {
         self.backgroundColor = _config.backgroundColor
         self.alpha = _config.alpha
         self.clipsToBounds = true
@@ -105,7 +104,7 @@ public class SwiftyToast: UIView {
         }
 
         let rect = parent.frame
-        let msgLabel = UILabel(frame: CGRectMake(0, 0, rect.width * _config.maxWidth, rect.height))
+        let msgLabel = UILabel(frame: CGRect(x: 0, y: 0, width: rect.width * _config.maxWidth, height: rect.height))
         msgLabel.text = message
         msgLabel.textColor = _config.textColor
         msgLabel.font = _config.font
@@ -113,40 +112,40 @@ public class SwiftyToast: UIView {
         msgLabel.sizeToFit()
         self.addSubview(msgLabel)
 
-        let size = CGSizeMake(  msgLabel.frame.width + _config.paddingHorizontal * 2,
-                                msgLabel.frame.height + _config.paddingVertical * 2)
-        self.frame = CGRectMake(0, 0, size.width, size.height)
+        let size = CGSize(  width: msgLabel.frame.width + _config.paddingHorizontal * 2,
+                                height: msgLabel.frame.height + _config.paddingVertical * 2)
+        self.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
 
-        self.center = CGPointMake(rect.width / 2, rect.height / 2)
-        if _config.position & Position.Top.rawValue != 0 {
+        self.center = CGPoint(x: rect.width / 2, y: rect.height / 2)
+        if _config.position & Position.top.rawValue != 0 {
             self.frame.origin.y = 0
-        } else if _config.position & Position.Bottom.rawValue != 0 {
+        } else if _config.position & Position.bottom.rawValue != 0 {
             self.frame.origin.y = rect.height - self.frame.height
         }
-        if _config.position & Position.Left.rawValue != 0 {
+        if _config.position & Position.left.rawValue != 0 {
             self.frame.origin.x = 0
-        } else if (_config.position & Position.Right.rawValue != 0) {
+        } else if (_config.position & Position.right.rawValue != 0) {
             self.frame.origin.x = rect.width - self.frame.width
         }
 
-        msgLabel.center = parent.convertPoint(self.center, toView: self)
+        msgLabel.center = parent.convert(self.center, to: self)
     }
 
 // MARK: - shows
 
-    public class func show(message: String) {
+    open class func show(_ message: String) {
         self.show(message, view: topView())
     }
 
-    public class func show(message: String, view: UIView) {
+    open class func show(_ message: String, view: UIView) {
         show(message, view:view, config: { _ in })
     }
 
-    public class func show(message: String, config: (SwiftyToastConfig) -> Void) {
+    open class func show(_ message: String, config: (SwiftyToastConfig) -> Void) {
         show(message, view: topView(), config: config)
     }
 
-    public class func show(message: String, view: UIView, config: (SwiftyToastConfig) -> Void) {
+    open class func show(_ message: String, view: UIView, config: (SwiftyToastConfig) -> Void) {
         for subview in view.subviews {
             if subview is SwiftyToast {
                 subview.removeFromSuperview()
@@ -156,16 +155,16 @@ public class SwiftyToast: UIView {
         let toast = SwiftyToast()
         config(toast._config)
         view.addSubview(toast)
-        view.bringSubviewToFront(toast)
+        view.bringSubview(toFront: toast)
         toast.setup(message, parent: view)
 
         toast.fadeInOut()
     }
 
-    private class func topView() -> UIView {
-        var window = UIApplication.sharedApplication().keyWindow
+    fileprivate class func topView() -> UIView {
+        var window = UIApplication.shared.keyWindow
         if (window == nil) {
-            window = UIApplication.sharedApplication().windows[0]
+            window = UIApplication.shared.windows[0]
         }
         var viewController = window?.rootViewController
         while (viewController!.presentedViewController != nil) {
@@ -176,17 +175,17 @@ public class SwiftyToast: UIView {
 
 // MARK: - animations
 
-    private func fadeInOut() {
+    fileprivate func fadeInOut() {
         self.alpha = 0
-        UIView.animateWithDuration(_config.durationBefore, animations: { () -> Void in
+        UIView.animate(withDuration: _config.durationBefore, animations: { () -> Void in
             self.alpha = 1.0
-        }) { (finished) -> Void in
-            UIView.animateWithDuration(self._config.durationAfter, delay: self._config.duration,
-                options: UIViewAnimationOptions.CurveLinear, animations: { () -> Void in
+        }, completion: { (finished) -> Void in
+            UIView.animate(withDuration: self._config.durationAfter, delay: self._config.duration,
+                options: UIViewAnimationOptions.curveLinear, animations: { () -> Void in
                 self.alpha = 0
             }, completion: { (finished) -> Void in
                 self.removeFromSuperview()
             })
-        }
+        }) 
     }
 }

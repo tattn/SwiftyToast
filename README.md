@@ -37,32 +37,32 @@ SwiftyToast.show("Hello world\nToast test")
 
 // customization
 SwiftyToast.show("Hello world\nToast test", view:self.view) { config in
-    // appearance
-    config.maxWidth = CGFloat(0.8)
-    config.paddingHorizontal = CGFloat(10.0)
-    config.paddingVertical = CGFloat(10.0)
-    config.cornerRadius = CGFloat(8)
-    config.alpha = CGFloat(0.5)
-    config.font = UIFont(name: "SnellRoundhand", size: 25.0)
-    config.textColor = UIColor(red: 0.192, green: 0.216, blue: 0.082, alpha: 1.0)
-    config.backgroundColor = UIColor(red: 0.886, green: 0.976, blue: 0.72, alpha: 1.0)
-    // shadow
-    config.shadow = true
-    config.shadowOpacity = Float(0.5)
-    config.shadowRadius = CGFloat(10.0)
-    config.shadowOffset = CGSizeMake(4.0, 4.0)
-    config.shadowColor = UIColor(red: 0.576, green: 0.624, blue: 0.36, alpha: 1.0).CGColor
-    // duration
-    config.durationBefore = 1.0
-    config.duration = 2.0
-    config.durationAfter = 0.5
-    // position
-    config.position = SwiftyToast.Position.Bottom.rawValue | SwiftyToast.Position.Right.rawValue
+	// appearance
+	config.maxWidth = 0.8
+	config.paddingHorizontal = 10.0
+	config.paddingVertical = 10.0
+	config.cornerRadius = 8
+	config.alpha = 0.5
+	config.font = UIFont(name: "SnellRoundhand", size: 25.0)
+	config.textColor = UIColor(red: 0.192, green: 0.216, blue: 0.082, alpha: 1.0)
+	config.backgroundColor = UIColor(red: 0.886, green: 0.976, blue: 0.72, alpha: 1.0)
+	// shadow
+	config.shadow = true
+	config.shadowOpacity = 0.5
+	config.shadowRadius = 10.0
+	config.shadowOffset = CGSize(width: 4.0, height: 4.0)
+	config.shadowColor = UIColor(red: 0.576, green: 0.624, blue: 0.36, alpha: 1.0).cgColor
+	// duration
+	config.durationBefore = 1.0
+	config.duration = 2.0
+	config.durationAfter = 0.5
+	// position
+	config.position = SwiftyToast.Position.bottom.rawValue | SwiftyToast.Position.right.rawValue
 }
 
 // global settings
-SwiftyToast.config.backgroundColor = UIColor.blackColor()
-SwiftyToast.config.textColor = UIColor.whiteColor()
+SwiftyToast.config.backgroundColor = .black
+SwiftyToast.config.textColor = .white
 ```
 
 ## Contributing
