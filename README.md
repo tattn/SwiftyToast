@@ -16,7 +16,7 @@ A simple toast library written by Swift
 github "tattn/SwiftyToast"
 ```
 
-### CocoaPods
+### CocoaPods (Deprecated)
 Install with CocoaPods by adding the following to your Podfile:
 ```ruby
 platform :ios, '8.0'
