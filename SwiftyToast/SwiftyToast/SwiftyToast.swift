@@ -155,7 +155,7 @@ open class SwiftyToast: UIView {
         let toast = SwiftyToast()
         config(toast._config)
         view.addSubview(toast)
-        view.bringSubview(toFront: toast)
+        view.bringSubviewToFront(toast)
         toast.setup(message, parent: view)
 
         toast.fadeInOut()
@@ -181,7 +181,7 @@ open class SwiftyToast: UIView {
             self.alpha = 1.0
         }, completion: { (finished) -> Void in
             UIView.animate(withDuration: self._config.durationAfter, delay: self._config.duration,
-                options: UIViewAnimationOptions.curveLinear, animations: { () -> Void in
+                options: UIView.AnimationOptions.curveLinear, animations: { () -> Void in
                 self.alpha = 0
             }, completion: { (finished) -> Void in
                 self.removeFromSuperview()
